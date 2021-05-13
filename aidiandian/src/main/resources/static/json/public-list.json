@@ -1,0 +1,94 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 10,
+  "data":
+  [
+    {
+      "collid": "000001",
+      "collname": "张三",
+      "username": "yyy",
+      "collnumber": "ddd",
+      "collinfo": "10086"
+    },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  },{
+    "collid": "000001",
+    "collname": "张三",
+    "username": "yyy",
+    "collnumber": "ddd",
+    "collinfo": "10086"
+  }
+  ],
+  "totalRow": true
+}

@@ -1,0 +1,24 @@
+body{margin: 10px;}
+.layui-form-text{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    background-color: #009688;
+}
+
+.war {
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    color: sandybrown;
+    font-size: 20px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}

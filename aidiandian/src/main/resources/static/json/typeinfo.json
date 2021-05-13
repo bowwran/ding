@@ -1,0 +1,35 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 10,
+  "data":
+  [
+    {
+      "id": 10000,
+      "typename": "凉拌菜"
+    },
+    {
+      "id": 10001,
+      "typename": "炒菜"
+    },
+  {
+      "id": 10002,
+      "typename": "蒸菜"
+    },
+    {
+      "id": 10003,
+      "typename": "炒饭"
+    },
+  {
+      "id": 10004,
+      "typename": "川菜"
+    },
+    {
+      "id": 10005,
+      "typename": "粤菜"
+    }
+
+
+  ],
+    "totalRow": true
+    }

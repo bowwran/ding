@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>添加新菜单</title>
+    <link rel="stylesheet" href="../../static/css/layui.css">
+</head>
+<body class="layui-layout-body">
+
+<div class=" layui-form" action=" ">
+    <!-- 内容主体区域 -->
+    <form class="layui-form" action="">
+<!--        <div  class=" layui-form-item ">-->
+
+<!--            &lt;!&ndash;工作经历&ndash;&gt;-->
+<!--            </table>-->
+            <table class="layui-table" style="padding: 15px;"align="center">
+
+                <thead>
+                <tr>
+                    <th colspan="3"><blockquote class="layui-elem-quote" style="font-size: large">添加菜单</blockquote>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="layui-input-block">
+                        菜品名称：
+                        <input type="text" name="title"   lay-verify="required" placeholder="请输入全称" autocomplete="off" class="layui-input">
+                    </td>
+                    <td rowspan="4" colspan="2">说明：
+                    </td>
+                </tr>
+                <tr>
+                    <td class="layui-input-block">
+                        原料：
+                        <input type="text" name="title"   lay-verify="required" placeholder="填写原料描述。" autocomplete="off" class="layui-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="layui-input-block">
+                        市场价格：
+                        <input type="text" name="title"   lay-verify="required" placeholder="请输入价格" autocomplete="off" class="layui-input">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="layui-input-block">
+                        类别：
+                        <input type="text" name="title"   lay-verify="required" placeholder="填写菜品类别" autocomplete="off" class="layui-input">
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+
+            <div class="layui-input-block" align="center">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">添加</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+
+
+
+    </form>
+
+</div>
+
+<script src="../../static/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+</script>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test2' //指定元素
+        });
+    });
+</script>
+
+
+<script>
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //拖拽上传
+        upload.render({
+            elem: '#test10'
+            ,url: 'https://httpbin.org/post' //改成您自己的上传接口
+            ,done: function(res){
+                layer.msg('上传成功');
+                layui.$('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.files.file);
+                console.log(res)
+            }
+        });
+
+
+
+        //绑定原始文件域
+        upload.render({
+            elem: '#test20'
+            ,url: '127.0.0.1 '//改成您自己的上传接口
+            ,done: function(res){
+                layer.msg('上传成功');
+                console.log(res)
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>

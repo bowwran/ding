@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>销售订单查询结果信息列表</title>
+    <link rel="stylesheet" href="../../static/plugin/layui/css/layui.css" >
+    <link rel="stylesheet" href="../../static/css/orderlist.css">
+</head>
+<body>
+
+<table class="layui-hide" id="demo" lay-filter="test">
+
+    <fieldset class="layui-elem-field layui-field-title"  style="margin-top: 30px;">
+        <legend align="center">销售订单查询</legend>
+    </fieldset>
+    <div class="demoTable">
+        按用户ID查询：
+        <div class="layui-inline">
+            <input class="layui-input" name="id" id="ID" autocomplete="off">
+        </div>
+        <button class="layui-btn" data-type="reload">查询</button>
+        按菜品名称查询：
+        <div class="layui-inline">
+            <input class="layui-input" name="id" id="NAME" autocomplete="off">
+        </div>
+        <button class="layui-btn" data-type="reload">查询</button>
+    </div>
+    <br>
+    <div class="demoTable">
+        按销售日期查询：
+        <div class="layui-inline">
+            <input class="layui-input" name="id" id="DATE" autocomplete="off">
+        </div>
+        <button class="layui-btn" data-type="reload">查询</button>
+
+    </div>
+    </div>
+</table>
+
+
+<script src="../../static/plugin/layui/layui.js"></script>
+<script src="../../static/js/orderquery.js"></script>
+</body>
+</html>
