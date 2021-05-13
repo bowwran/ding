@@ -1,0 +1,38 @@
+{
+  "code": 0,
+  "msg": "",
+  "data": [{
+    "Id":1,
+    "Name": "凉皮",
+    "Type": "凉菜",
+    "Introduction": "暂无",
+    "material": "面粉",
+    "price": "11",
+    "vipprice": 1.5,
+    "sellaccount": 20,
+    "remain": 45
+
+  },{
+    "Id":2,
+    "Name": "糖醋排骨",
+    "Type": "炒菜",
+    "Introduction": "暂无",
+    "material": "排骨、糖",
+    "price": "24",
+    "vipprice": 1.5,
+    "sellaccount": 20,
+    "remain": 45
+
+  },{
+    "Id":3,
+    "Name": "蛋炒饭",
+    "Type": "炒饭",
+    "Introduction": "暂无",
+    "material": "鸡蛋、饭",
+    "price": "40",
+    "vipprice": 1.5,
+    "sellaccount": 20,
+    "remain": 45
+
+  }]
+}
