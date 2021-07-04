@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zm.aidian.Mapper.MenusMapper">
+
+    <resultMap id="MenusDTO" type="com.zm.aidian.dto.MenusDTO">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="typename" property="typeName" jdbcType="VARCHAR"/>
+        <result column="burden" property="burden" jdbcType="VARCHAR"/>
+        <result column="brief" property="brief" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="REAL"/>
+        <result column="sums" property="sums" jdbcType="INTEGER"/>
+        <result column="price1" property="price1" jdbcType="REAL"/>
+        <result column="sums1" property="sums1" jdbcType="INTEGER"/>
+        <result column="imgpath" property="imgpath" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+<select id="selectAllMenusDTO" resultType="MenusDTO">
+    select m.id,m.name,t.typeName,m.burden,m.brief,m.price,m.sums,m.price1,m.sums1,m.imgpath
+    from menus m,types t where m.typeid=t.id
+</select>
+
+<select id="selectMenuById" resultType="Menus">
+     select * from menus
+     where id=#{id}
+</select>
+
+<insert id="addMenu" keyProperty="id" useGeneratedKeys="true">
+    insert into menus (name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
+    values (#{name}, #{typeid}, #{burden}, #{brief},#{price}, #{sums}, #{price1}, #{sums1},#{imgpath})
+</insert>
+
+    <update id="updateMenu">
+        update menus
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="typeid != null">
+                typeid = #{typeid},
+            </if>
+            <if test="burden != null and burden != ''">
+                burden = #{burden},
+            </if>
+            <if test="brief != null and brief != ''">
+                brief = #{brief},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="sums != null">
+                sums = #{sums},
+            </if>
+            <if test="price1 != null">
+                price1 = #{price1},
+            </if>
+            <if test="sums1 != null">
+                sums1 = #{sums1},
+            </if>
+            <if test="imgpath != null and imgpath != ''">
+                imgpath = #{imgpath},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <select id="deleteMenuById" parameterType="Menus">
+        delete from menus where id=#{id}
+    </select>
+</mapper>

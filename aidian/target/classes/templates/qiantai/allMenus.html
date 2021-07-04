@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>爱点点</title>
+    <meta content="" name=keywords />
+    <meta content="" name=description />
+
+    <script type="text/javascript" src="../../static/js/base.js"></script>
+    <script type="text/javascript" src="../../static/js/common.js"></script>
+    <script type="text/javascript" src="../../static/js/form.js"></script>
+    <script type="text/javascript" src="../../static/js/blockui.js"></script>
+
+
+    <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/topmenu_bk.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/A.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/dingcanall.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/dingcanche.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/newslist_time2.css}" rel="stylesheet" type="text/css" />
+    <script src="../../static/js/dingcanall.js" type="text/javascript"></script>
+    <script src="../../static/js/dingcanall.js" type="text/javascript"></script>
+    <script src="../../static/js/dingcansubmit.js" type="text/javascript"></script>
+</head>
+<body style='background: transparent'>
+<table width="900" border="0" align="center" cellpadding="0"
+       cellspacing="0">
+    <tr>
+        <td align="left" valign="top">
+
+            <script language="JavaScript">
+                function checkSession(){
+                    var session =
+                    if(session==null){
+                        return false
+                    }
+                    check11()
+                }
+            </script>
+
+
+            <div th:replace="~{commons/common_qiantai::header}"/>
+        </td>
+    </tr>
+    <tr>
+        <td height="30"></td>
+    </tr>
+
+    <tr>
+        <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="59%" align="left" valign="top"><div id='pdv_3606' class='pdv_class' title='' style='width: 648px; top: 0px; left: 0px; z-index: 12'>
+                    <div id='spdv_3606' class='pdv_content' style='overflow: visible; width: 100%;'>
+                        <div class="pdv_border" style="margin: 0; padding: 0; height: 100%; border: 0px solid; ">
+
+                            <div style="padding: 0px">
+
+
+                                <div id="dingcanall2">
+
+                                    <div style="margin-top: 0px; padding: 0px;">
+                                        <div id="mm_01" class="dingcanall_connow">
+                                            <table border="0" style="width:670px;">
+                                                <tr>
+                                                    <td style="margin-top: 10px">
+                                                        <div th:each="list:${menuList}" style="width: 325px;height:220px;float: left">
+                                                            <table border="0" >
+                                                                <tr>
+                                                                    <td rowspan="5" class="bookPic"><img style="border-style:solid;border-width:1px;" th:src="@{'/images/'+${list.getImgpath()}}" width="160" heigth="160"></a></td>
+                                                                    <td>菜名:</td>
+                                                                    <td th:text="${list.getName()}"></td>
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>市场价格:</td>
+                                                                    <td th:text="${list.getPrice()}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>会员价格:</td>
+                                                                    <td th:text="${list.getPrice1()}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>配料:</td>
+                                                                    <td th:text="${list.getBurden()}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>菜品类型:</td>
+                                                                    <td th:text="${list.getTypename()}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="3" style="height: 40px;">
+                                                                        <a th:href="@{/qiantai/order_addshoppingcar/(menuId=${list.getId()})}">
+                                                                            <img th:src="@{/img/cart.png}" border="0" alt="" /></a></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="dingcanall_bottom_left">&nbsp;</div>
+                            <div id="dingcanall_bottom_right">&nbsp;</div>
+                            <input type="hidden" name="picw" id="picw" value="150" /> <input
+                                type="hidden" name="pich" id="pich" value="140" /> <input
+                                type="hidden" name="fittype" id="fittype" value="auto" />
+                        </div>
+                    </div>
+                </div>
+                    </div></td>
+                <td width="41%" align="right" valign="top"><table width="243" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><div id='pdv_' class='pdv_class' title='网站公告' style='width: 243px; top: 0px; left: 0px; z-index: 3'>
+                            <div id='spdv_3603' class='pdv_content' style='overflow: hidden; width: 100%; height: 100%'>
+                                <div class="pdv_border" style="border: 0px; height: 100%; padding: 0; margin: 0; ">
+                                    <div style="height: 100%; ">
+                                        <div style="height: 43px; background: url(../../static/img/bg.jpg) 0px 0px no-repeat">
+
+                                            <div style="float: left; font: bold 16px/43px 'Microsoft YaHei', 'SimSun', Arial, Sans-Serif; text-align: left; padding-left: 50px; color: #feab43;">餐厅公告</div>
+                                            <div style="float: right; width: 60px; height: 43px; text-align: right; background: url(../../static/img/bg.jpg) -840px 0px no-repeat">
+                                                <a th:href="@{/qiantai/queryAllNotice}" style="font: 12px/43px simsun; color: #505050; margin-right: 12px; display: inline">更多&gt;&gt;</a>
+                                            </div>
+                                        </div>
+                                        <div style="margin: 0px 3px; padding: 10px;" align="left">
+                                            <ul class="newslist_time2" th:each="n_list:${noticesList}">
+                                                <li class="newslist_time2"><div class="time" th:text="${n_list.getTimes()}"></div>
+                                                    <a th:href="@{'/qiantai/queryNoticeById/'+${n_list.getId()}}" class="newslist_time2" th:text="${n_list.getName()}"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: -10px; height: 10px; line-height: 10px; background: url(../../static/img/bg.jpg) 0px -220px no-repeat">&nbsp;</div>
+                                <div style="float: right; margin-top: -10px; width: 10px; height: 10px; line-height: 10px; background: url(../../static/img/bg.jpg) -890px -220px no-repeat">&nbsp;</div>
+                            </div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td height="10">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <div id='pdv_3614' class='pdv_class' title='我的餐车' style='width: 243px; top: 0px; left: 0px; z-index: 2'>
+                                <div id='spdv_3614' class='pdv_content' style='overflow: visible; width: 100%;'>
+                                    <div class="pdv_border" style="margin: 0; padding: 0; height: 100%; border: 0px solid; ">
+                                        <div style="height: 25px; margin: 1px; display: none; ">
+                                            <div style="float: left; margin-left: 12px; line-height: 25px; font-weight: bold; ">我的餐车</div>
+                                            <div style="float: right; margin-right: 10px; display: none">
+                                                <a href="-1" style="line-height: 25px; ">更多</a>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 0px">
+                                            <div id="dingcanche">
+                                                <div id="dingcanche2">
+                                                    <div id="dingcanche_top">
+                                                        <div id="dingcanche_top_left">我的餐车</div>
+                                                        <div id="dingcanche_top_right">&nbsp;</div>
+                                                    </div>
+
+                                                    <div id="dcinfo" style="margin: 0px 3px 1px 3px;"></div>
+                                                    <table width="100%" border="0" cellspacing="0" style="background: #fef0d3;">
+                                                        <tr>
+                                                            <td align="center">菜单名称</td>
+                                                            <td align="center">单价</td>
+                                                            <td align="center">数量</td>
+                                                            <td align="center"></td>
+                                                        </tr>
+                                                        <tr th:each="sc:${session.shoppingcar}">
+                                                            <td align="center" th:text="${sc.getName()}"></td>
+                                                            <td align="center" th:text="${sc.getPrice()}"></td>
+                                                            <td align="center" th:text="${sc.getSums()}"></td>
+                                                            <td align="center"><a th:href="@{/qiantai/order_del(del=${session.i})}">取消</a></td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div style="height: 24px; margin: 5px 3px 1px 3px;">
+                                                        <div style="float: left; line-height: 24px; padding-left: 25px;">小&nbsp;&nbsp;计：</div>
+
+                                                        <div style="float: right; line-height: 24px; padding-right: 50px;">
+                                                            <font id="allnums" style="color: #ff0000;" th:text="${session.sum2}"></font>份
+                                                        </div>
+                                                        <div style="float: right; line-height: 24px; padding-right:17px;">
+                                                            <font id="cpprice" style="color: #ff0000;" th:text="${session.sum1}"></font>元
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div style="height: 30px; margin: 5px 3px 1px 3px;">
+                                                        <table width="100%" border="0" cellspacing="0">
+                                                            <tr>
+                                                                <td align="center" width="40%"></td>
+                                                                <td align="center" width="40%">
+                                                                    <a th:href="@{/qiantai/submitOrder}">
+                                                                        <img th:src="@{/img/canche_submit.gif}" border="0" />
+                                                                    </a>
+                                                                </td>
+                                                                <td align="center" width="40%">
+                                                                    <a th:href="@{/qiantai/submitOrder(remove=1)}">
+                                                                        <img th:src="@{/img/quxiao2.gif}" border="0" />
+                                                                    </a>
+                                                                </td>
+
+                                                            </tr>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="dingcanche_bottom_left">&nbsp;</div>
+                                        <div id="dingcanche_bottom_right">&nbsp;</div>
+
+                                        <input type="hidden" name="modnums_b" id="modnums_b" value="" />
+                                        <script>
+                                            $("div.cpline_d:even")
+                                                .addClass(
+                                                    "cpline_s");
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <tr>
+                        <td height="10">&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <td valign="top">
+                            <div id='pdv_3613' class='pdv_class' title='本周菜单' style='width: 243px; top: 0px; left: 0px; z-index: 5'>
+                            <div id='spdv_3613' class='pdv_content' style='overflow: hidden; width: 100%; height: 100%'>
+                                <div class="pdv_border" style="margin: 0; padding: 0; height: 100%; border: 0px solid; ">
+                                    <div style="height: 25px; margin: 1px; display: none; ">
+                                        <div style="float: left; margin-left: 12px; line-height: 25px; font-weight: bold;">本周菜单</div>
+                                        <div style="float: right; margin-right: 10px; display: none">
+                                            <a href="-1" style="line-height: 25px;">更多</a>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 0px">
+                                        <link href="../../static/css/dingcanweekmenu.css" rel="stylesheet" type="text/css" />
+                                        <div id="dingcanweekmenu">
+                                            <div id="dingcanweekmenu2">
+                                                <div id="dingcanweekmenu_top">
+                                                    <div id="dingcanweekmenu_top_left">销售排行榜</div>
+                                                    <div id="dingcanweekmenu_top_right">&nbsp;</div>
+                                                </div>
+                                                <div style="padding: 0px;">
+                                                    <div class="dingcanweekmenuinfo" align="left">
+                                                        <link href="../../static/css/newslist_time2.css" rel="stylesheet" type="text/css" />
+                                                        <li class="newslist_time2"><div class="time">已销售0次</div>
+                                                            <a href="show.html?id=12" class="newslist_time2">烤鸡</a>
+                                                        </li>
+                                                        <li class="newslist_time2"><div class="time">已销售4次</div>
+                                                            <a href="show.html?id=14" class="newslist_time2">苦瓜虾仁</a>
+                                                        </li>
+                                                        <li class="newslist_time2"><div class="time">已销售4次</div>
+                                                            <a href="show.html?id=15" class="newslist_time2">华夫饼</a>
+                                                        </li>
+                                                        <li class="newslist_time2"><div class="time">已销售1次</div>
+                                                            <a href="show.html?id=17" class="newslist_time2">肉末盖浇饭</a>
+                                                        </li>
+                                                        <li class="newslist_time2"><div class="time">已销售1次</div>
+                                                            <a href="show.html?id=18" class="newslist_time2">杂粮煎饼</a>
+                                                        </li>
+                                                        <li class="newslist_time2"><div class="time">已销售1次</div>
+                                                            <a href="show.html?id=19" class="newslist_time2">蜜汁小鸡腿</a>
+                                                        </li>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<div id="dingcanweekmenu_bottom_left"></div>
+    <div id="dingcanweekmenu_bottom_right">&nbsp;</div>-->
+                                    </div>
+                                </div>
+                                <!-- </div>-->
+                            </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table></td>
+            </tr>
+        </table></td>
+    </tr>
+
+    <tr>
+        <td height="10">&nbsp;</td>
+    </tr>
+
+    <tfoot>
+
+     <div th:replace="~{commons/common_qiantai::footer}"/>
+    </tfoot>
+</table>
+</body>
+</html>

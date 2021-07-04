@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>爱点点</title>
+
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <link th:href="@{/css/style-responsive.css}" rel="stylesheet">
+
+    <!--pickers css-->
+    <link rel="stylesheet" type="text/css" th:href="@{js/bootstrap-datepicker/css/datepicker-custom.css}" />
+    <script th:src="@{/js/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script th:src="@{/js/html5shiv.js}"></script>
+    <script th:src="@{/js/respond.min.js}"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div th:replace="~{commons/common::sidebar}"></div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div th:replace="~{commons/common::headerbar}"></div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="orderList.html">销售订单管理</a>
+                </li>
+                <li>
+                    <a href="orderList_select.html">销售订单查询</a>
+                </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        订单查询
+                    </header>
+
+                    <div class="panel-body">
+                        <form role="form" th:action="@{/orders/order_select}" method="post">
+                            <div class="form-inline col-lg-12" style="margin-top: 5px">
+                                <label class="col-lg-2">按用户ID查询：</label>
+                                <input type="text" name="userID" class="form-control col-lg-9"  id="u_id" style="width: 30%">
+                                <button class="btn btn-primary col-lg-1" style="margin-left: 10px">查询</button>
+                            </div>
+                            <div class="form-inline col-lg-12" style="margin-top: 5px">
+                                <label class="col-lg-2">按菜品名称查询：</label>
+                                <input type="text" name="menusName" class="form-control col-lg-9" id="m_name" style="width: 30%">
+                                <button class="btn btn-primary col-lg-1" style="margin-left: 10px">查询</button>
+                            </div>
+                            <div class="form-inline col-lg-12" style="margin-top: 5px">
+                                <label class="col-lg-2">按销售日期查询：</label>
+                                <input type="text" name="saleDate" class="form-control col-lg-9 default-date-picker"   id="s_date" style="width: 30%">
+                                <button class="btn btn-primary col-lg-1" style="margin-left: 10px">查询</button>
+                            </div>
+                        </form>
+                    </div>
+                     <header class="panel-heading">销售订单查询结果信息列表</header>
+                            <table class="table  table-hover general-table">
+                                <thead>
+                                <tr>
+                                    <th> 用户id</th>
+                                    <th>真实姓名</th>
+                                    <th>联系方式</th>
+                                    <th>住址</th>
+                                    <th>菜品名称</th>
+                                    <th>订购数量</th>
+                                    <th>单价（元）</th>
+                                    <th>合计（元）</th>
+                                    <th>订购时间</th>
+                                    <th>是否派送</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr th:each="list:${lists}">
+                                    <td th:text="${list.getUserid()}"></td>
+                                    <td th:text="${list.getUsername()}"></td>
+                                    <td th:text="${list.getPhone()}"></td>
+                                    <td th:text="${list.getAddress()}"> </td>
+                                    <td th:text="${list.getMenuname()}"> </td>
+                                    <td th:text="${list.getMenusum()}"> </td>
+                                    <td th:text="${list.getPrice1()}"> </td>
+                                    <td th:text="${list.getMenusum()*list.getPrice1()}"> </td>
+                                    <td th:text="${list.getTimes()}"></td>
+                                    <td th:text="${list.getDelivery()==1?'是':'否'}"> </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+    <div th:replace="~{commons/common::footerbar}"></div>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script th:src="@{/js/jquery-1.10.2.min.js}"></script>
+<script th:src="@{/js/jquery-ui-1.9.2.custom.min.js}"></script>
+<script th:src="@{/js/jquery-migrate-1.2.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/modernizr.min.js}"></script>
+<script th:src="@{/js/jquery.nicescroll.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>
+
+<!--pickers initialization-->
+<script th:src="@{/js/pickers-init.js}"></script>
+
+<!--common scripts for all pages-->
+<script th:src="@{/js/scripts.js}"></script>
+
+</body>
+</html>

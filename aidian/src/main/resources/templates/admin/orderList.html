@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>爱点点</title>
+
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <link th:href="@{/css/style-responsive.css}" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js} IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script th:src="@{/js/html5shiv.js}"></script>
+    <script th:src="@{/js/respond.min.js}"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div th:replace="~{commons/common::sidebar}"></div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div th:replace="~{commons/common::headerbar}"></div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <ul class="breadcrumb">
+                <li>
+                    <a th:href="@{/orders/list}">销售订单管理</a>
+                </li>
+                <li>
+                    <a th:href="@{/orders/list}">销售订单信息列表</a>
+                </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            订单
+                        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+
+                         </span>
+                        </header>
+
+                        <div class="panel-body">
+                            <table class="table  table-hover general-table">
+                                <thead>
+                                <tr>
+                                    <th> 用户id</th>
+                                    <th>真实姓名</th>
+                                    <th>联系方式</th>
+                                    <th>住址</th>
+                                    <th>菜品名称</th>
+                                    <th>订购数量</th>
+                                    <th>单价（元）</th>
+                                    <th>合计（元）</th>
+                                    <th>订购时间</th>
+                                    <th>是否派送</th>
+                                    <th>确认订单</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr th:each="list:${order_list}">
+                                    <td th:text="${list.getUserid()}"></td>
+                                    <td th:text="${list.getUsername()}"></td>
+                                    <td th:text="${list.getPhone()}"></td>
+                                    <td th:text="${list.getAddress()}"> </td>
+                                    <td th:text="${list.getMenuname()}"> </td>
+                                    <td th:text="${list.getMenusum()}"> </td>
+                                    <td th:text="${list.getPrice1()}"> </td>
+                                    <td th:text="${list.getMenusum()*list.getPrice1()}"> </td>
+                                    <td th:text="${list.getTimes()}"></td>
+                                    <td th:text="${list.getDelivery()==1?'是':'否'}"> </td>
+                                    <td th:if="${list.getDelivery() eq 0}">
+                                        <a class="btn btn-info" name="reqtype" th:href="@{/orders/confirm(id=${list.getId()},reqtype='delivery')}">确定</a>
+                                        <a class="btn btn-danger" name="reqtype" th:href="@{/orders/confirm(id=${list.getId()},reqtype='del')}">取消</a>
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+    <div th:replace="~{commons/common::footerbar}"></div>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script th:src="@{/js/jquery-1.10.2.min.js}"></script>
+<script th:src="@{/js/jquery-ui-1.9.2.custom.min.js}"></script>
+<script th:src="@{/js/jquery-migrate-1.2.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/modernizr.min.js}"></script>
+<script th:src="@{/js/jquery.nicescroll.js}"></script>
+
+<!--common scripts for all pages-->
+<script th:src="@{/js/scripts.js}"></script>
+
+</body>
+</html>

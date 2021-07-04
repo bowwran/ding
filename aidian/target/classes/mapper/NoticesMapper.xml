@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zm.aidian.Mapper.NoticesMapper">
+    <select id="selectAllNotices" resultType="Notices">
+        select * from notice
+    </select>
+    <select id="selectNoticeById" resultType="Notices">
+        select * from notice where id=#{id}
+    </select>
+    <select id="addNotice" parameterType="Notices">
+        insert into notice(name, content, times) values (#{name}, #{content}, #{times})
+    </select>
+    <select id="updateNotice" parameterType="Notices">
+        update notice
+        <set>
+            <if test="name!=null and name!=''">
+                name=#{name},
+            </if>
+            <if test="content!=null and content!=''">
+                content=#{content},
+            </if>
+            <if test="times!=null and times!=''">
+                times=#{times}
+            </if>
+        </set>
+        where id=#{id};
+    </select>
+    <select id="deleteNoticeById" parameterType="Notices">
+        delete from notice where id=#{id}
+    </select>
+</mapper>

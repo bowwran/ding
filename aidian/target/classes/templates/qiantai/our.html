@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>爱点点</title>
+    <meta content="" name=keywords />
+    <meta content="" name=description />
+
+    <script type="text/javascript" src="../../static/js/base.js"></script>
+    <script type="text/javascript" src="../../static/js/common.js"></script>
+    <script type="text/javascript" src="../../static/js/form.js"></script>
+    <script type="text/javascript" src="../../static/js/blockui.js"></script>
+
+
+    <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/topmenu_bk.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/A.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/dingcanall.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/dingcanche.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/newslist_time2.css}" rel="stylesheet" type="text/css" />
+    <script src="../../static/js/dingcanall.js" type="text/javascript"></script>
+    <script src="../../static/js/dingcanall.js" type="text/javascript"></script>
+    <script src="../../static/js/dingcansubmit.js" type="text/javascript"></script>
+</head>
+<body style='background: transparent'>
+<table width="900" border="0" align="center" cellpadding="0"
+       cellspacing="0">
+    <tr>
+        <td align="left" valign="top">
+
+            <script language="JavaScript">
+                function checkSession(){
+                    var session =
+                    if(session==null){
+                        return false
+                    }
+                    check11()
+                }
+            </script>
+
+
+            <div th:replace="~{commons/common_qiantai::header}"/>
+        </td>
+    </tr>
+    <tr>
+        <td height="30"></td>
+    </tr>
+
+    <tr>
+        <td align="center" valign="top" height="400">
+
+            <table border="0" cellspacing="0"  width="100%">
+
+                <tr>
+                    <td  align="center" vlign="top"  >
+                        <strong><span style="font-family: Helvetica, sans-serif;font-size: 20px;">
+			       关于我们
+			 </span></strong>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td  align="left" vlign="top" >
+                        <p style=" font-size: 16px;">
+                            <br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;小时候的味道”即便五年十年都没机会再吃，也总是会挂念着，一吃就能想起过往时的味道来。这种味觉记忆，缠绕着思乡的点滴情怀，成为人们最原始的“乡愁”。你也有“小时候的味道”吗？<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;欢迎来到爱点点，让你重温童年妈妈的味道！
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td  align="center"  >
+                        <a th:href="@{/qiantai/allMenus}" target="_self">
+			        <span style="font-family: Helvetica, sans-serif;font-size: 16px;">
+			        返回
+                    </span></a>
+                    </td>
+                </tr>
+            </table>
+
+
+
+
+
+        </td>
+    </tr>
+
+    <tr>
+        <td height="10">&nbsp;</td>
+    </tr>
+
+
+
+    <div th:replace="~{commons/common_qiantai::footer}"/>
+
+</table>
+</body>
+</html>
